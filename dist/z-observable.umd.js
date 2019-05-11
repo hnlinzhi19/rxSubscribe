@@ -95,4 +95,4 @@
   return Observable;
 
 })));
-//# sourceMappingURL=z-observable.umd.js.map
+//# sourceMappingURL=lz-observable.umd.js.map

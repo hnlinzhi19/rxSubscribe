@@ -1,15 +1,15 @@
 {
-  "name": "z-observable",
+  "name": "lz-observable",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/z-observable.umd.js",
-  "module": "dist/z-observable.es5.js",
-  "typings": "dist/types/z-observable.d.ts",
+  "main": "dist/lz-observable.umd.js",
+  "module": "dist/lz-observable.es5.js",
+  "typings": "dist/types/lz-observable.d.ts",
   "files": [
     "dist"
   ],
-  "author": "黄linz <yylinz19@gmail.com>",
+  "author": "黄linz <hnyanlin19@163.com>",
   "repository": {
     "type": "git",
     "url": ""

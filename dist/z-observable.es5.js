@@ -87,4 +87,4 @@ var Observable = /** @class */ (function () {
 }());
 
 export default Observable;
-//# sourceMappingURL=z-observable.es5.js.map
+//# sourceMappingURL=lz-observable.es5.js.map
