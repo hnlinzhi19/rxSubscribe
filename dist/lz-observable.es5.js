@@ -3,7 +3,6 @@ var getDataType = function (data) {
 };
 var isFunction = function (data) { return getDataType(data) === '[object function]'; };
 var isObject = function (data) { return getDataType(data) === '[object object]'; };
-//# sourceMappingURL=util.js.map
 
 // Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
 var subscriber = function (obj) {

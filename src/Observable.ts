@@ -13,6 +13,9 @@ interface AllInterface {
   completeCb?: Function|null,
   errorCb?: Function|null,
 }
+interface FuncInterface {
+  (obj:SubscriberInterface): void;
+}
 
 const subscriber = (obj:SubscriberInterface,) : AllInterface=>{
   let objCb:AllInterface ={
@@ -30,7 +33,7 @@ const subscriber = (obj:SubscriberInterface,) : AllInterface=>{
   return objCb;
   // run();
 }
-const observable = (func:Function) =>{
+const observable = (func:FuncInterface) =>{
   return {
     subscriber:(obj:SubscriberInterface)=>{
       let objCb:AllInterface = subscriber(obj);

@@ -3,7 +3,10 @@ interface SubscriberInterface {
     complete?: Function;
     error?: Function;
 }
-declare const observable: (func: Function) => {
+interface FuncInterface {
+    (obj: SubscriberInterface): void;
+}
+declare const observable: (func: FuncInterface) => {
     subscriber: (obj: SubscriberInterface) => void;
 };
 export default observable;
