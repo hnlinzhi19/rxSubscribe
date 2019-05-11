@@ -10,7 +10,7 @@
   <script src="./dist/lz-observable.umd.js"></script>
   <script>
 
-    const test = new observable(function(subscribe){
+    const test = observable(function(subscribe){
       subscribe.next(1231);
 
       setTimeout(() => {
@@ -24,7 +24,7 @@
         subscribe.error();
       }, 2200);
     });
-    test.subscribe({
+    test.subscriber({
       next:function (res) {
         console.log(res,'tes')
       },
@@ -33,6 +33,17 @@
       },
       error: function(){
         console.log('error compotet')
+      }
+    })
+    test.subscriber({
+      next:function (res) {
+        console.log(res,'sec')
+      },
+      complete: function(){
+        console.log('sec complete')
+      },
+      error: function(){
+        console.log('error sec')
       }
     })
 

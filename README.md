@@ -1,4 +1,7 @@
-  const test = new observable(function(subscribe){
+## 纯函数好用一点
+
+```
+const test = observable(function(subscribe){
       subscribe.next(1231);
 
       setTimeout(() => {
@@ -12,7 +15,7 @@
         subscribe.error();
       }, 2200);
     });
-    test.subscribe({
+    test.subscriber({
       next:function (res) {
         console.log(res,'tes')
       },
@@ -23,3 +26,4 @@
         console.log('error compotet')
       }
     })
+```

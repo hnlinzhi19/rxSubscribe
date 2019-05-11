@@ -1,11 +1,9 @@
-interface ObserverDataInterface {
+interface SubscriberInterface {
     next: Function;
     complete?: Function;
     error?: Function;
 }
-declare class Observable {
-    initFunc: Function;
-    constructor(observFunc: Function);
-    subscribe: (subObj: ObserverDataInterface) => void;
-}
-export default Observable;
+declare const observable: (func: Function) => {
+    subscriber: (obj: SubscriberInterface) => void;
+};
+export default observable;
