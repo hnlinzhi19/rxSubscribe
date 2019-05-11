@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./dist/z-observable.umd.js"></script>
+  <script>
+
+    const test = new observable(function(subscribe){
+      subscribe.next(1231);
+
+      setTimeout(() => {
+        subscribe.next(654);
+      }, 5000);
+
+      setTimeout(() => {
+        subscribe.complete();
+      }, 2110);
+      setTimeout(() => {
+        subscribe.error();
+      }, 2200);
+    });
+    test.subscribe({
+      next:function (res) {
+        console.log(res,'tes')
+      },
+      complete: function(){
+        console.log('testese complete')
+      },
+      error: function(){
+        console.log('error compotet')
+      }
+    })
+
+  </script>
+</body>
+</html>
