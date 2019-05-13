@@ -13,7 +13,7 @@
   // Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
   var subscriber = function (obj) {
       var objCb = {
-          nextCb: [],
+          nextCb: []
       };
       if (isObject(obj) && isFunction(obj.next)) {
           objCb.nextCb.push(obj.next);
@@ -28,30 +28,28 @@
       // run();
   };
   var observable = function (func) {
-      return {
-          subscriber: function (obj) {
-              var objCb = subscriber(obj);
-              var clearAll = function () {
-                  objCb.errorCb = null;
-                  objCb.completeCb = null;
-                  objCb.nextCb = [];
-              };
-              func({
-                  next: function (data) {
-                      objCb.nextCb.forEach(function (item) {
-                          item(data);
-                      });
-                  },
-                  complete: function (data) {
-                      objCb.completeCb && objCb.completeCb(data);
-                      clearAll();
-                  },
-                  error: function (data) {
-                      objCb.errorCb && objCb.errorCb(data);
-                      clearAll();
-                  }
-              });
-          }
+      return function (obj) {
+          var objCb = subscriber(obj);
+          var clearAll = function () {
+              objCb.errorCb = null;
+              objCb.completeCb = null;
+              objCb.nextCb = [];
+          };
+          func({
+              next: function (data) {
+                  objCb.nextCb.forEach(function (item) {
+                      item(data);
+                  });
+              },
+              complete: function (data) {
+                  objCb.completeCb && objCb.completeCb(data);
+                  clearAll();
+              },
+              error: function (data) {
+                  objCb.errorCb && objCb.errorCb(data);
+                  clearAll();
+              }
+          });
       };
   };
 

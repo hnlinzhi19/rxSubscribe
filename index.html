@@ -24,7 +24,7 @@
         subscribe.error();
       }, 2200);
     });
-    test.subscriber({
+    test({
       next:function (res) {
         console.log(res,'tes')
       },
@@ -35,7 +35,7 @@
         console.log('error compotet')
       }
     })
-    test.subscriber({
+    test({
       next:function (res) {
         console.log(res,'sec')
       },

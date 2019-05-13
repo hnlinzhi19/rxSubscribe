@@ -6,7 +6,5 @@ interface SubscriberInterface {
 interface FuncInterface {
     (obj: SubscriberInterface): void;
 }
-declare const observable: (func: FuncInterface) => {
-    subscriber: (obj: SubscriberInterface) => void;
-};
+declare const observable: (func: FuncInterface) => (obj: SubscriberInterface) => void;
 export default observable;
